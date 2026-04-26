@@ -4,10 +4,10 @@
 //  Датчики: К-термопары через MAX6675
 //  Контроль тока: токовые кольца (ADC)
 //  Индикация: Жёлтый / Зелёный / Красный через 74HC595
-//  MCU: ESP-32 DevKit1
+//  MCU: ESP-32 Pocket 32 (Dongsen Tech)
 // =====================================================================
 
-#include <SPI.h>
+// SPI не подключаем — используем bit-bang для MAX6675
 
 // ======================== КОНФИГУРАЦИЯ ================================
 
@@ -15,21 +15,21 @@
 #define MAX6675_SCK      18    // Тактирование
 #define MAX6675_SO       19    // Данные (MISO)
 #define MAX6675_CS_1      5    // Выбор чипа — ТЭН #1
-#define MAX6675_CS_2      4    // Выбор чипа — ТЭН #2
+#define MAX6675_CS_2     17    // Выбор чипа — ТЭН #2
 #define MAX6675_CS_3     16    // Выбор чипа — ТЭН #3
-#define MAX6675_CS_4     17    // Выбор чипа — ТЭН #4
+#define MAX6675_CS_4      4    // Выбор чипа — ТЭН #4
 
 // --- Пины управления реле (active-LOW: LOW = реле ВКЛ) ---
-#define RELAY_1          23    // ТЭН #1
+#define RELAY_1          21    // ТЭН #1
 #define RELAY_2          22    // ТЭН #2
-#define RELAY_3          21    // ТЭН #3
+#define RELAY_3          23    // ТЭН #3
 #define RELAY_4          13    // ТЭН #4
 
 // --- Пины токовых колец (аналоговый вход, ADC1) ---
-#define CURRENT_PIN_1    36    // ADC1_CH0
-#define CURRENT_PIN_2    39    // ADC1_CH3
-#define CURRENT_PIN_3    34    // ADC1_CH6
-#define CURRENT_PIN_4    35    // ADC1_CH7
+#define CURRENT_PIN_1    34    // ADC1_CH6
+#define CURRENT_PIN_2    35    // ADC1_CH7
+#define CURRENT_PIN_3    36    // ADC1_CH0
+#define CURRENT_PIN_4    39    // ADC1_CH3
 
 // --- Пины сдвигового регистра 74HC595 для светодиодов ---
 #define SR_DS            26    // Serial Data In
@@ -98,8 +98,9 @@ static const uint8_t curPins[]   = { CURRENT_PIN_1, CURRENT_PIN_2, CURRENT_PIN_3
 // ======================== ЧТЕНИЕ ТЕРМОПАРЫ =============================
 
 // Чтение одной термопары через MAX6675 (bit-bang SPI).
+// rawOut — если не NULL, туда записывается сырое 16-битное значение.
 // Возвращает температуру в °C или NAN при ошибке.
-float readThermocouple(uint8_t csPin) {
+float readThermocouple(uint8_t csPin, uint16_t *rawOut = nullptr) {
   digitalWrite(csPin, LOW);
   delayMicroseconds(1);
 
@@ -112,6 +113,9 @@ float readThermocouple(uint8_t csPin) {
     delayMicroseconds(1);
   }
   digitalWrite(csPin, HIGH);
+
+  // Сохранить сырые данные для отладки
+  if (rawOut) *rawOut = raw;
 
   // D2 = 1 → термопара оборвана или не подключена
   if (raw & 0x04) {
@@ -224,9 +228,22 @@ void processHeater(Heater &h, int index) {
   }
 
   // ---------- 2. Чтение температуры ----------
-  float temp = readThermocouple(h.csPin);
+  uint16_t rawSPI = 0;
+  float temp = readThermocouple(h.csPin, &rawSPI);
   h.thermoOk = !isnan(temp);
   h.temperature = temp;
+
+  // Отладка: сырой SPI + распаковка бит
+  bool d2  = (rawSPI >> 2) & 1;   // 1 = термопара оборвана
+  bool d3  = (rawSPI >> 3) & 1;   //_DEVICE_ID (всегда 0 у MAX6675)
+ int tempBits = rawSPI >> 3;       // Биты D15..D3 = температура (0..4095)
+  Serial.printf("[DBG] ТЭН #%d: raw=0x%04X | D2=%d D3=%d tempBits=%d",
+                index + 1, rawSPI, d2, d3, tempBits);
+  if (!isnan(temp))
+    Serial.printf(" -> %.1fC", temp);
+  if (d2)
+    Serial.print(" OPEN");
+  Serial.println();
 
   if (!h.thermoOk) {
     h.thermoErrCount++;
@@ -423,7 +440,7 @@ void setup() {
   delay(500);
   Serial.println("\n\n========================================");
   Serial.println("   ТЭН Controller v1.0");
-  Serial.println("   4x ТЭН 1 кВт | ESP-32 DevKit1");
+  Serial.println("   4x ТЭН 1 кВт | ESP-32 Pocket 32");
   Serial.println("========================================\n");
 
   // --- Инициализация SPI пинов для MAX6675 ---
@@ -461,14 +478,9 @@ void setup() {
   }
   digitalWrite(SR_STCP, HIGH);
 
-  // --- Настройка ADC ---
-  adc1_config_width(ADC_WIDTH_BIT_12);  // 12 бит (0–4095)
-  // adc1_config_channel_atten() не нужна для GPIO 34–39,
-  // но для полноты настроим:
-  adc1_config_channel_atten(ADC1_CHANNEL_0, ADC_ATTEN_DB_11);  // GPIO 36
-  adc1_config_channel_atten(ADC1_CHANNEL_3, ADC_ATTEN_DB_11);  // GPIO 39
-  adc1_config_channel_atten(ADC1_CHANNEL_6, ADC_ATTEN_DB_11);  // GPIO 34
-  adc1_config_channel_atten(ADC1_CHANNEL_7, ADC_ATTEN_DB_11);  // GPIO 35
+  // --- Настройка ADC (Arduino API, совместимо с ESP-IDF 5.x) ---
+  analogReadResolution(12);       // 12 бит (0–4095)
+  analogSetAttenuation(ADC_11db); // Полный диапазон 0–3.3 В
 
   // --- Конфигурация каналов ---
   for (int i = 0; i < 4; i++) {
@@ -488,12 +500,13 @@ void setup() {
   // --- Первичное чтение термопар ---
   Serial.println("Проверка термопар...");
   for (int i = 0; i < 4; i++) {
-    float t = readThermocouple(csPins[i]);
+    uint16_t rawSPI = 0;
+    float t = readThermocouple(csPins[i], &rawSPI);
     if (isnan(t)) {
-      Serial.printf("  ТЭН #%d: ТЕРМОПАРА НЕ ПОДКЛЮЧЕНА или оборвана!\n", i + 1);
+      Serial.printf("  ТЭН #%d: ОБРЫВ (raw=0x%04X)\n", i + 1, rawSPI);
     } else {
       heaters[i].temperature = t;
-      Serial.printf("  ТЭН #%d: %.1f °C — ОК\n", i + 1, t);
+      Serial.printf("  ТЭН #%d: %.1f C (raw=0x%04X) — ОК\n", i + 1, t, rawSPI);
     }
   }
 

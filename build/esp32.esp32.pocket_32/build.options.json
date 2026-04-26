@@ -2,9 +2,9 @@
   "additionalFiles": "",
   "builtInLibrariesFolders": "E:\\Arduino IDE\\Arduino15\\libraries",
   "compiler.optimization_flags": "-Og -g3",
-  "customBuildProperties": "build.warn_data_percentage=75",
+  "customBuildProperties": "",
   "fqbn": "esp32:esp32:pocket_32:UploadSpeed=921600,FlashFreq=80,DebugLevel=none,EraseFlash=none",
-  "hardwareFolders": "E:\\Arduino IDE\\Arduino15\\packages",
+  "hardwareFolders": "E:\\Arduino IDE\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.8,E:\\Arduino IDE\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.8",
   "otherLibrariesFolders": "D:\\!!!PLC\\xDuino\\dev\\libraries",
-  "sketchLocation": "D:\\!!!PLC\\xDuino\\dev\\!TEST\\K-Pair"
+  "sketchLocation": "D:\\!!!PLC\\xDuino\\dev\\!TEST\\therm_controller"
 }
