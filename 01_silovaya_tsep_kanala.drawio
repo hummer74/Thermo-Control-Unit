@@ -1,0 +1,32 @@
+<mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="650">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="TITLE" value="Силовая цепь одного канала (x4)" style="text;fontSize=16;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="250" y="10" width="400" height="30" as="geometry" /></mxCell>
+    <mxCell id="L" value="L (220V AC)" style="text;fontSize=14;fontStyle=1;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="20" y="90" width="90" height="30" as="geometry" /></mxCell>
+    <mxCell id="N" value="N (Neutral)" style="text;fontSize=14;fontStyle=1;fontColor=#0066CC;" vertex="1" parent="1"><mxGeometry x="20" y="310" width="90" height="30" as="geometry" /></mxCell>
+    <mxCell id="CT" value="CT&lt;br&gt;SCT-013&lt;br&gt;1000:1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="170" y="75" width="80" height="65" as="geometry" /></mxCell>
+    <mxCell id="RELAY" value="Реле&lt;br&gt;10A / 250V&lt;br&gt;(Active LOW)" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1"><mxGeometry x="330" y="65" width="140" height="75" as="geometry" /></mxCell>
+    <mxCell id="HEATER" value="ТЭН&lt;br&gt;1 кВт" style="shape=zigzag;whiteSpace=wrap;html=1;strokeWidth=3;fillColor=none;fontSize=12;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="570" y="170" width="130" height="80" as="geometry" /></mxCell>
+    <mxCell id="RB" value="Rb&lt;br&gt;100 Ом" style="resistor;whiteSpace=wrap;html=1;fontSize=10;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="140" y="320" width="80" height="30" as="geometry" /></mxCell>
+    <mxCell id="BRIDGE" value="Диодный&lt;br&gt;мост W04M" style="shape=parallelogram;whiteSpace=wrap;html=1;fixedSize=1;strokeWidth=2;fontSize=10;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="280" y="310" width="120" height="55" as="geometry" /></mxCell>
+    <mxCell id="CAP" value="C&lt;br&gt;10 мкФ" style="shape=mxgraph.basic.smiley;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fontSize=9;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="300" y="410" width="55" height="55" as="geometry" /></mxCell>
+    <mxCell id="POT" value="Radj&lt;br&gt;10 кОм" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;fontSize=10;shape=mxgraph.electrical.resistors.potentiometer_2;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="470" y="340" width="70" height="90" as="geometry" /></mxCell>
+    <mxCell id="ADC" value="ESP-32&lt;br&gt;ADC_IN&lt;br&gt;(GPIO 36..35)" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fontStyle=1;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="610" y="340" width="130" height="60" as="geometry" /></mxCell>
+    <mxCell id="GND" value="GND" style="text;fontSize=11;fontStyle=1;fontColor=#999999;" vertex="1" parent="1"><mxGeometry x="305" y="480" width="40" height="20" as="geometry" /></mxCell>
+    <mxCell id="CTRL" value="GPIO (Relay&lt;br&gt;Control)" style="text;fontSize=10;fontStyle=3;fontColor=#9673a6;" vertex="1" parent="1"><mxGeometry x="335" y="145" width="100" height="35" as="geometry" /></mxCell>
+    <mxCell id="c1" edge="1" parent="1" source="L" target="CT" style="strokeWidth=3;strokeColor=#CC0000;"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="c2" edge="1" parent="1" source="CT" target="RELAY" style="strokeWidth=3;strokeColor=#CC0000;"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="c3" edge="1" parent="1" source="RELAY" target="HEATER" style="strokeWidth=3;strokeColor=#CC0000;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="635" y="100" /></Array></mxGeometry></mxCell>
+    <mxCell id="c4" edge="1" parent="1" source="N" target="HEATER" style="strokeWidth=3;strokeColor=#0066CC;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="635" y="325" /></Array></mxGeometry></mxCell>
+    <mxCell id="c5" edge="1" parent="1" source="CT" target="RB" style="strokeWidth=1.5;strokeColor=#009900;dashed=0;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="210" y="170" /><mxPoint x="110" y="170" /><mxPoint x="110" y="335" /></Array></mxGeometry></mxCell>
+    <mxCell id="c6" edge="1" parent="1" source="RB" target="BRIDGE" style="strokeWidth=1.5;strokeColor=#009900;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="180" y="335" /><mxPoint x="180" y="337" /><mxPoint x="280" y="337" /></Array></mxGeometry></mxCell>
+    <mxCell id="c7" edge="1" parent="1" source="BRIDGE" target="CAP" style="strokeWidth=1.5;strokeColor=#009900;"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="c8" edge="1" parent="1" source="CAP" target="POT" style="strokeWidth=1.5;strokeColor=#009900;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="390" y="437" /><mxPoint x="390" y="437" /><mxPoint x="450" y="437" /></Array></mxGeometry></mxCell>
+    <mxCell id="c9" edge="1" parent="1" source="POT" target="ADC" style="strokeWidth=1.5;strokeColor=#009900;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="575" y="385" /></Array></mxGeometry></mxCell>
+    <mxCell id="c10" edge="1" parent="1" source="CAP" target="GND" style="strokeWidth=1;strokeColor=#999999;dashed=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="c11" edge="1" parent="1" source="CTRL" target="RELAY" style="strokeWidth=1;strokeColor=#9673a6;dashed=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
+    <mxCell id="NOTE1" value="Силовая цепь (красный/синий)" style="text;fontSize=9;fontStyle=2;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="300" y="190" width="180" height="20" as="geometry" /></mxCell>
+    <mxCell id="NOTE2" value="Цепь измерения тока (зелёный)" style="text;fontSize=9;fontStyle=2;fontColor=#009900;" vertex="1" parent="1"><mxGeometry x="120" y="470" width="200" height="20" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel>

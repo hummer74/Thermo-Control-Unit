@@ -12,7 +12,7 @@ int countMeasurements = 0;
 
 unsigned long lastMeasureTime = 0;
 unsigned long lastOutputTime = 0;
-const unsigned long measureInterval = 330;   // ~3 измерения в секунду
+const unsigned long measureInterval = 333;   // ~3 измерения в секунду
 const unsigned long outputInterval = 1000;   // вывод раз в секунду
 
 void setup() {
@@ -48,6 +48,7 @@ void loop() {
       
       // Единственное, что уходит в Serial — целое число
       Serial.println(roundedTemp);
+      Serial.println(averageTemp);
 
       // Сброс накопителей
       sumTemperatures = 0.0;

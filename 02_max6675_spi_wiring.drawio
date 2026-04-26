@@ -1,0 +1,171 @@
+<mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="750">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="TITLE" value="Подключение MAX6675 - SPI шина (4 термопары)" style="text;fontSize=16;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="300" y="10" width="450" height="30" as="geometry" /></mxCell>
+
+    <!-- ESP-32 Block -->
+    <mxCell id="ESP32" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=8;" vertex="1" parent="1"><mxGeometry x="30" y="80" width="200" height="380" as="geometry" /></mxCell>
+    <mxCell id="ESP32_TITLE" value="ESP-32 DevKit1" style="text;fontSize=14;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="50" y="90" width="160" height="25" as="geometry" /></mxCell>
+
+    <!-- ESP-32 Pins -->
+    <mxCell id="PIN_SCK" value="GPIO 18 (SCK)" style="text;fontSize=11;fontStyle=0;align=right;fillColor=none;" vertex="1" parent="1"><mxGeometry x="70" y="135" width="150" height="20" as="geometry" /></mxCell>
+    <mxCell id="PIN_SO" value="GPIO 19 (SO/MISO)" style="text;fontSize=11;fontStyle=0;align=right;fillColor=none;" vertex="1" parent="1"><mxGeometry x="70" y="170" width="150" height="20" as="geometry" /></mxCell>
+    <mxCell id="PIN_CS1" value="GPIO 5 (CS_TEN1)" style="text;fontSize=11;fontStyle=0;align=right;fillColor=none;" vertex="1" parent="1"><mxGeometry x="70" y="210" width="150" height="20" as="geometry" /></mxCell>
+    <mxCell id="PIN_CS2" value="GPIO 4 (CS_TEN2)" style="text;fontSize=11;fontStyle=0;align=right;fillColor=none;" vertex="1" parent="1"><mxGeometry x="70" y="250" width="150" height="20" as="geometry" /></mxCell>
+    <mxCell id="PIN_CS3" value="GPIO 16 (CS_TEN3)" style="text;fontSize=11;fontStyle=0;align=right;fillColor=none;" vertex="1" parent="1"><mxGeometry x="70" y="290" width="150" height="20" as="geometry" /></mxCell>
+    <mxCell id="PIN_CS4" value="GPIO 17 (CS_TEN4)" style="text;fontSize=11;fontStyle=0;align=right;fillColor=none;" vertex="1" parent="1"><mxGeometry x="70" y="330" width="150" height="20" as="geometry" /></mxCell>
+    <mxCell id="PIN_3V3" value="3.3V" style="text;fontSize=11;fontStyle=1;align=right;fillColor=none;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="70" y="380" width="150" height="20" as="geometry" /></mxCell>
+    <mxCell id="PIN_GND" value="GND" style="text;fontSize=11;fontStyle=1;align=right;fillColor=none;fontColor=#0066CC;" vertex="1" parent="1"><mxGeometry x="70" y="420" width="150" height="20" as="geometry" /></mxCell>
+
+    <!-- Pin dots on ESP-32 -->
+    <mxCell id="DOT_SCK" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="225" y="140" width="8" height="8" as="geometry" /></mxCell>
+    <mxCell id="DOT_SO" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="225" y="175" width="8" height="8" as="geometry" /></mxCell>
+    <mxCell id="DOT_CS1" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="225" y="215" width="8" height="8" as="geometry" /></mxCell>
+    <mxCell id="DOT_CS2" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="225" y="255" width="8" height="8" as="geometry" /></mxCell>
+    <mxCell id="DOT_CS3" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="225" y="295" width="8" height="8" as="geometry" /></mxCell>
+    <mxCell id="DOT_CS4" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="225" y="335" width="8" height="8" as="geometry" /></mxCell>
+    <mxCell id="DOT_3V3" value="" style="ellipse;fillColor=#CC0000;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="225" y="385" width="8" height="8" as="geometry" /></mxCell>
+    <mxCell id="DOT_GND" value="" style="ellipse;fillColor=#0066CC;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="225" y="425" width="8" height="8" as="geometry" /></mxCell>
+
+    <!-- MAX6675 #1 -->
+    <mxCell id="M1" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="520" y="60" width="160" height="140" as="geometry" /></mxCell>
+    <mxCell id="M1_TITLE" value="MAX6675 #1" style="text;fontSize=12;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="540" y="65" width="120" height="20" as="geometry" /></mxCell>
+    <mxCell id="M1_SCK" value="SCK" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="530" y="95" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M1_SO" value="SO" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="530" y="115" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M1_CS" value="CS" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="530" y="135" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M1_VCC" value="VCC" style="text;fontSize=10;align=left;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="530" y="160" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M1_GND" value="GND" style="text;fontSize=10;align=left;fontColor=#0066CC;" vertex="1" parent="1"><mxGeometry x="620" y="160" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M1_TC" value="T+ / T-&lt;br&gt;(Термопара 1)" style="text;fontSize=10;fontStyle=3;align=center;fontColor=#666666;" vertex="1" parent="1"><mxGeometry x="540" y="180" width="120" height="20" as="geometry" /></mxCell>
+    <!-- M1 pin dots left -->
+    <mxCell id="M1D_SCK" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="518" y="100" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="M1D_SO" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="518" y="120" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="M1D_CS" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="518" y="140" width="6" height="6" as="geometry" /></mxCell>
+
+    <!-- MAX6675 #2 -->
+    <mxCell id="M2" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="780" y="60" width="160" height="140" as="geometry" /></mxCell>
+    <mxCell id="M2_TITLE" value="MAX6675 #2" style="text;fontSize=12;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="800" y="65" width="120" height="20" as="geometry" /></mxCell>
+    <mxCell id="M2_SCK" value="SCK" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="790" y="95" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M2_SO" value="SO" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="790" y="115" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M2_CS" value="CS" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="790" y="135" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M2_VCC" value="VCC" style="text;fontSize=10;align=left;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="790" y="160" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M2_GND" value="GND" style="text;fontSize=10;align=left;fontColor=#0066CC;" vertex="1" parent="1"><mxGeometry x="880" y="160" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M2_TC" value="T+ / T-&lt;br&gt;(Термопара 2)" style="text;fontSize=10;fontStyle=3;align=center;fontColor=#666666;" vertex="1" parent="1"><mxGeometry x="800" y="180" width="120" height="20" as="geometry" /></mxCell>
+    <mxCell id="M2D_SCK" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="778" y="100" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="M2D_SO" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="778" y="120" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="M2D_CS" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="778" y="140" width="6" height="6" as="geometry" /></mxCell>
+
+    <!-- MAX6675 #3 -->
+    <mxCell id="M3" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="520" y="240" width="160" height="140" as="geometry" /></mxCell>
+    <mxCell id="M3_TITLE" value="MAX6675 #3" style="text;fontSize=12;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="540" y="245" width="120" height="20" as="geometry" /></mxCell>
+    <mxCell id="M3_SCK" value="SCK" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="530" y="275" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M3_SO" value="SO" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="530" y="295" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M3_CS" value="CS" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="530" y="315" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M3_VCC" value="VCC" style="text;fontSize=10;align=left;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="530" y="340" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M3_GND" value="GND" style="text;fontSize=10;align=left;fontColor=#0066CC;" vertex="1" parent="1"><mxGeometry x="620" y="340" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M3_TC" value="T+ / T-&lt;br&gt;(Термопара 3)" style="text;fontSize=10;fontStyle=3;align=center;fontColor=#666666;" vertex="1" parent="1"><mxGeometry x="540" y="360" width="120" height="20" as="geometry" /></mxCell>
+    <mxCell id="M3D_SCK" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="518" y="280" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="M3D_SO" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="518" y="300" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="M3D_CS" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="518" y="320" width="6" height="6" as="geometry" /></mxCell>
+
+    <!-- MAX6675 #4 -->
+    <mxCell id="M4" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="780" y="240" width="160" height="140" as="geometry" /></mxCell>
+    <mxCell id="M4_TITLE" value="MAX6675 #4" style="text;fontSize=12;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="800" y="245" width="120" height="20" as="geometry" /></mxCell>
+    <mxCell id="M4_SCK" value="SCK" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="790" y="275" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M4_SO" value="SO" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="790" y="295" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M4_CS" value="CS" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="790" y="315" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M4_VCC" value="VCC" style="text;fontSize=10;align=left;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="790" y="340" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M4_GND" value="GND" style="text;fontSize=10;align=left;fontColor=#0066CC;" vertex="1" parent="1"><mxGeometry x="880" y="340" width="40" height="18" as="geometry" /></mxCell>
+    <mxCell id="M4_TC" value="T+ / T-&lt;br&gt;(Термопара 4)" style="text;fontSize=10;fontStyle=3;align=center;fontColor=#666666;" vertex="1" parent="1"><mxGeometry x="800" y="360" width="120" height="20" as="geometry" /></mxCell>
+    <mxCell id="M4D_SCK" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="778" y="280" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="M4D_SO" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="778" y="300" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="M4D_CS" value="" style="ellipse;fillColor=#333333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="778" y="320" width="6" height="6" as="geometry" /></mxCell>
+
+    <!-- SCK Bus (blue) -->
+    <mxCell id="BUS_SCK" value="SCK Bus" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#0066CC;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="233" y="144" as="sourcePoint" />
+      <mxPoint x="510" y="103" as="targetPoint" />
+      <Array as="points"><mxPoint x="380" y="144" /><mxPoint x="380" y="50" /><mxPoint x="510" y="50" /><mxPoint x="510" y="103" /></Array>
+    </mxGeometry></mxCell>
+    <!-- SCK bus branch to M2 -->
+    <mxCell id="BUS_SCK_M2" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#0066CC;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="516" y="103" as="sourcePoint" />
+      <mxPoint x="770" y="103" as="targetPoint" />
+      <Array as="points"><mxPoint x="516" y="50" /><mxPoint x="770" y="50" /></Array>
+    </mxGeometry></mxCell>
+    <!-- SCK bus branch to M3 -->
+    <mxCell id="BUS_SCK_M3" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#0066CC;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="510" y="103" as="sourcePoint" />
+      <mxPoint x="510" y="283" as="targetPoint" />
+    </mxGeometry></mxCell>
+    <!-- SCK bus branch to M4 -->
+    <mxCell id="BUS_SCK_M4" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#0066CC;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="770" y="103" as="sourcePoint" />
+      <mxPoint x="770" y="283" as="targetPoint" />
+    </mxGeometry></mxCell>
+
+    <!-- SO Bus (green) -->
+    <mxCell id="BUS_SO" value="SO Bus (MISO)" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#009900;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="233" y="179" as="sourcePoint" />
+      <mxPoint x="500" y="123" as="targetPoint" />
+      <Array as="points"><mxPoint x="400" y="179" /><mxPoint x="400" y="42" /><mxPoint x="500" y="42" /><mxPoint x="500" y="123" /></Array>
+    </mxGeometry></mxCell>
+    <mxCell id="BUS_SO_M2" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#009900;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="506" y="123" as="sourcePoint" />
+      <mxPoint x="760" y="123" as="targetPoint" />
+      <Array as="points"><mxPoint x="506" y="42" /><mxPoint x="760" y="42" /></Array>
+    </mxGeometry></mxCell>
+    <mxCell id="BUS_SO_M3" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#009900;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="500" y="123" as="sourcePoint" />
+      <mxPoint x="500" y="303" as="targetPoint" />
+    </mxGeometry></mxCell>
+    <mxCell id="BUS_SO_M4" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#009900;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="760" y="123" as="sourcePoint" />
+      <mxPoint x="760" y="303" as="targetPoint" />
+    </mxGeometry></mxCell>
+
+    <!-- CS lines (individual, orange) -->
+    <mxCell id="CS1_LINE" value="CS1 (GPIO5)" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1.5;strokeColor=#FF6600;rounded=1;fontSize=9;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="233" y="219" as="sourcePoint" />
+      <mxPoint x="510" y="143" as="targetPoint" />
+      <Array as="points"><mxPoint x="480" y="219" /><mxPoint x="480" y="143" /></Array>
+    </mxGeometry></mxCell>
+    <mxCell id="CS2_LINE" value="CS2 (GPIO4)" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1.5;strokeColor=#FF6600;rounded=1;fontSize=9;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="233" y="259" as="sourcePoint" />
+      <mxPoint x="770" y="143" as="targetPoint" />
+      <Array as="points"><mxPoint x="460" y="259" /><mxPoint x="460" y="143" /></Array>
+    </mxGeometry></mxCell>
+    <mxCell id="CS3_LINE" value="CS3 (GPIO16)" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1.5;strokeColor=#FF6600;rounded=1;fontSize=9;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="233" y="299" as="sourcePoint" />
+      <mxPoint x="510" y="323" as="targetPoint" />
+      <Array as="points"><mxPoint x="490" y="299" /><mxPoint x="490" y="323" /></Array>
+    </mxGeometry></mxCell>
+    <mxCell id="CS4_LINE" value="CS4 (GPIO17)" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1.5;strokeColor=#FF6600;rounded=1;fontSize=9;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="233" y="339" as="sourcePoint" />
+      <mxPoint x="770" y="323" as="targetPoint" />
+      <Array as="points"><mxPoint x="470" y="339" /><mxPoint x="470" y="323" /></Array>
+    </mxGeometry></mxCell>
+
+    <!-- Power lines (VCC and GND) -->
+    <mxCell id="VCC_LINE" value="3.3V Bus" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#CC0000;rounded=1;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="233" y="389" as="sourcePoint" />
+      <mxPoint x="520" y="165" as="targetPoint" />
+      <Array as="points"><mxPoint x="440" y="389" /><mxPoint x="440" y="230" /><mxPoint x="520" y="230" /><mxPoint x="520" y="165" /></Array>
+    </mxGeometry></mxCell>
+    <mxCell id="GND_LINE" value="GND Bus" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#0066CC;rounded=1;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="233" y="429" as="sourcePoint" />
+      <mxPoint x="650" y="345" as="targetPoint" />
+      <Array as="points"><mxPoint x="420" y="429" /><mxPoint x="420" y="420" /><mxPoint x="650" y="420" /><mxPoint x="650" y="345" /></Array>
+    </mxGeometry></mxCell>
+
+    <!-- Legend -->
+    <mxCell id="LEGEND" value="Легенда:" style="text;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="50" y="490" width="80" height="20" as="geometry" /></mxCell>
+    <mxCell id="LEG_SCK" value="SCK - общая шина (синий)" style="text;fontSize=10;fontColor=#0066CC;" vertex="1" parent="1"><mxGeometry x="50" y="515" width="200" height="18" as="geometry" /></mxCell>
+    <mxCell id="LEG_SO" value="SO/MISO - общая шина (зелёный)" style="text;fontSize=10;fontColor=#009900;" vertex="1" parent="1"><mxGeometry x="50" y="535" width="220" height="18" as="geometry" /></mxCell>
+    <mxCell id="LEG_CS" value="CS - индивидуальные линии (оранжевый)" style="text;fontSize=10;fontColor=#FF6600;" vertex="1" parent="1"><mxGeometry x="50" y="555" width="260" height="18" as="geometry" /></mxCell>
+    <mxCell id="LEG_POW" value="VCC/GND - общие шины питания (пунктир)" style="text;fontSize=10;fontColor=#666666;" vertex="1" parent="1"><mxGeometry x="50" y="575" width="280" height="18" as="geometry" /></mxCell>
+
+    <!-- Note -->
+    <mxCell id="NOTE" value="Все 4 модуля MAX6675 работают по SPI через общие линии SCK и SO.&lt;br&gt;Выбор модуля осуществляется индивидуальным сигналом CS для каждого." style="text;fontSize=10;fontStyle=2;fontColor=#666666;align=left;" vertex="1" parent="1"><mxGeometry x="400" y="480" width="380" height="40" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel>

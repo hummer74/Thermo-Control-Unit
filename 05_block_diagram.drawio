@@ -1,0 +1,71 @@
+<mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="TITLE" value="Структурная схема системы - Контроллер ТЭН (4 канала)" style="text;fontSize=18;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="250" y="10" width="550" height="35" as="geometry" /></mxCell>
+
+    <!-- Central ESP-32 -->
+    <mxCell id="ESP32" value="&lt;b&gt;ESP-32 DevKit1&lt;/b&gt;&lt;br&gt;MCU / Wi-Fi / UART&lt;br&gt;&lt;br&gt;18 GPIO:&lt;br&gt;4x CS (MAX6675)&lt;br&gt;1x SCK, 1x SO&lt;br&gt;4x Relay Ctrl&lt;br&gt;3x 74HC595&lt;br&gt;4x ADC (CT)" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;arcSize=10;" vertex="1" parent="1"><mxGeometry x="400" y="280" width="220" height="220" as="geometry" /></mxCell>
+
+    <!-- Power Supply -->
+    <mxCell id="PSU" value="&lt;b&gt;Блок питания&lt;/b&gt;&lt;br&gt;220V AC -&gt; 5V DC&lt;br&gt;(HLK-PM03)&lt;br&gt;&lt;br&gt;5V -&gt; 3.3V DC&lt;br&gt;(AMS1117-3.3)" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=10;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="420" y="580" width="180" height="110" as="geometry" /></mxCell>
+
+    <!-- MAX6675 Block -->
+    <mxCell id="MAX6675" value="&lt;b&gt;MAX6675 x4&lt;/b&gt;&lt;br&gt;Термопара K&lt;br&gt;SPI шина&lt;br&gt;Диапазон: 0-1024C&lt;br&gt;Точность: +-0.25C&lt;br&gt;&lt;br&gt;CS: GPIO 5,4,16,17&lt;br&gt;SCK: GPIO 18&lt;br&gt;SO: GPIO 19" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="80" y="100" width="190" height="150" as="geometry" /></mxCell>
+
+    <!-- Relay Module Block -->
+    <mxCell id="RELAYS" value="&lt;b&gt;Реле x4&lt;/b&gt;&lt;br&gt;10A / 250V AC&lt;br&gt;Active LOW&lt;br&gt;&lt;br&gt;Канал 1: GPIO 23&lt;br&gt;Канал 2: GPIO 22&lt;br&gt;Канал 3: GPIO 21&lt;br&gt;Канал 4: GPIO 13" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1"><mxGeometry x="750" y="100" width="190" height="150" as="geometry" /></mxCell>
+
+    <!-- CT Sensors Block -->
+    <mxCell id="CTSENS" value="&lt;b&gt;Датчики тока x4&lt;/b&gt;&lt;br&gt;CT SCT-013 (1000:1)&lt;br&gt;&lt;br&gt;Цепь:&lt;br&gt;Rb 100Ом + W04M&lt;br&gt;+ C 10мкФ + Radj 10кОм&lt;br&gt;&lt;br&gt;ADC: GPIO 36,39,34,35" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="80" y="340" width="190" height="150" as="geometry" /></mxCell>
+
+    <!-- 74HC595 + LEDs Block -->
+    <mxCell id="LEDS" value="&lt;b&gt;74HC595 x2 + 12 LED&lt;/b&gt;&lt;br&gt;Сдвиговый регистр каскад&lt;br&gt;&lt;br&gt;DS: GPIO 26&lt;br&gt;SHCP: GPIO 27&lt;br&gt;STCP: GPIO 14&lt;br&gt;&lt;br&gt;4 канала x 3 LED:&lt;br&gt;Жёлт / Зелёный / Красный" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1"><mxGeometry x="750" y="340" width="190" height="160" as="geometry" /></mxCell>
+
+    <!-- TEN (Heaters) Block -->
+    <mxCell id="HEATERS" value="&lt;b&gt;ТЭН x4&lt;/b&gt;&lt;br&gt;1 кВт / 220V AC&lt;br&gt;&lt;br&gt;Независимое&lt;br&gt;управление&lt;br&gt;&lt;br&gt;Диапазон:&lt;br&gt;435-450 C" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=10;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="780" y="560" width="150" height="130" as="geometry" /></mxCell>
+
+    <!-- UART/Control Block -->
+    <mxCell id="UART" value="&lt;b&gt;UART / Управление&lt;/b&gt;&lt;br&gt;&lt;br&gt;Команды:&lt;br&gt;STATUS, RESET n&lt;br&gt;STOP n|ALL&lt;br&gt;CAL n, THRESH v" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=10;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1"><mxGeometry x="400" y="100" width="220" height="110" as="geometry" /></mxCell>
+
+    <!-- Connections: ESP32 <-> MAX6675 (SPI) -->
+    <mxCell id="C_SPI" value="SPI Bus&lt;br&gt;(SCK, SO, CS x4)" style="strokeWidth=2;strokeColor=#d6b656;rounded=1;fontSize=9;fontStyle=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="ESP32" target="MAX6675"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="300" y="270" /></Array></mxGeometry></mxCell>
+
+    <!-- Connections: ESP32 <-> Relays -->
+    <mxCell id="C_RELAY" value="4x GPIO&lt;br&gt;(Active LOW)" style="strokeWidth=2;strokeColor=#9673a6;rounded=1;fontSize=9;fontStyle=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="ESP32" target="RELAYS"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="720" y="270" /></Array></mxGeometry></mxCell>
+
+    <!-- Connections: ESP32 <-> CT -->
+    <mxCell id="C_CT" value="4x ADC&lt;br&gt;(GPIO 36,39,34,35)" style="strokeWidth=2;strokeColor=#6c8ebf;rounded=1;fontSize=9;fontStyle=1;" edge="1" parent="1" source="ESP32" target="CTSENS"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- Connections: ESP32 <-> 74HC595 -->
+    <mxCell id="C_LED" value="3x GPIO&lt;br&gt;(DS, SHCP, STCP)" style="strokeWidth=2;strokeColor=#d79b00;rounded=1;fontSize=9;fontStyle=1;" edge="1" parent="1" source="ESP32" target="LEDS"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- Connections: ESP32 <-> UART -->
+    <mxCell id="C_UART" value="UART0" style="strokeWidth=2;strokeColor=#666666;rounded=1;fontSize=9;fontStyle=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="ESP32" target="UART"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="510" y="250" /></Array></mxGeometry></mxCell>
+
+    <!-- Connections: ESP32 <-> PSU -->
+    <mxCell id="C_PSU" value="3.3V + 5V&lt;br&gt;+ GND" style="strokeWidth=2;strokeColor=#b85450;rounded=1;fontSize=9;fontStyle=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ESP32" target="PSU"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- Connections: Relays <-> Heaters -->
+    <mxCell id="C_HEAT" value="220V AC&lt;br&gt;Силовые&lt;br&gt;контакты" style="strokeWidth=3;strokeColor=#CC0000;rounded=1;fontSize=9;fontStyle=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="RELAYS" target="HEATERS"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+    <!-- Connections: CT on power line -->
+    <mxCell id="C_CT_POW" value="Токовый&lt;br&gt;контроль" style="strokeWidth=2;strokeColor=#CC0000;rounded=1;fontSize=9;fontStyle=1;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="855" y="560" as="sourcePoint" />
+      <mxPoint x="270" y="415" as="targetPoint" />
+    </mxGeometry></mxCell>
+
+    <!-- Thermocouple connection -->
+    <mxCell id="C_TC" value="K-термопары&lt;br&gt;(4 шт.)" style="strokeWidth=2;strokeColor=#d6b656;rounded=1;fontSize=9;fontStyle=1;dashed=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="175" y="250" as="sourcePoint" />
+      <mxPoint x="855" y="560" as="targetPoint" />
+      <Array as="points"><mxPoint x="175" y="550" /><mxPoint x="855" y="550" /></Array>
+    </mxGeometry></mxCell>
+
+    <!-- Legend -->
+    <mxCell id="LEG" value="Легенда:" style="text;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="80" y="570" width="80" height="20" as="geometry" /></mxCell>
+    <mxCell id="L1" value="--- Управляющие сигналы (GPIO)" style="text;fontSize=10;fontColor=#333;" vertex="1" parent="1"><mxGeometry x="80" y="590" width="220" height="18" as="geometry" /></mxCell>
+    <mxCell id="L2" value="--- Силовая цепь 220V AC" style="text;fontSize=10;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="80" y="608" width="220" height="18" as="geometry" /></mxCell>
+    <mxCell id="L3" value="- - - Обратная связь / датчики" style="text;fontSize=10;fontColor=#666;" vertex="1" parent="1"><mxGeometry x="80" y="626" width="220" height="18" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel>

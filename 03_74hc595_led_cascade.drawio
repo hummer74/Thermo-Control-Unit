@@ -1,0 +1,107 @@
+<mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="TITLE" value="Каскад 74HC595 - управление 12 LED индикаторами" style="text;fontSize=16;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="250" y="10" width="550" height="30" as="geometry" /></mxCell>
+
+    <!-- ESP-32 Block -->
+    <mxCell id="ESP32" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="30" y="120" width="170" height="200" as="geometry" /></mxCell>
+    <mxCell id="ESP32_T" value="ESP-32" style="text;fontSize=14;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="55" y="130" width="120" height="25" as="geometry" /></mxCell>
+    <mxCell id="P_DS" value="GPIO 26 (DS)" style="text;fontSize=11;align=right;" vertex="1" parent="1"><mxGeometry x="60" y="175" width="130" height="20" as="geometry" /></mxCell>
+    <mxCell id="P_SHCP" value="GPIO 27 (SHCP)" style="text;fontSize=11;align=right;" vertex="1" parent="1"><mxGeometry x="60" y="210" width="130" height="20" as="geometry" /></mxCell>
+    <mxCell id="P_STCP" value="GPIO 14 (STCP)" style="text;fontSize=11;align=right;" vertex="1" parent="1"><mxGeometry x="60" y="245" width="130" height="20" as="geometry" /></mxCell>
+    <mxCell id="P_OE" value="OE = GND" style="text;fontSize=11;align=right;fontColor=#0066CC;" vertex="1" parent="1"><mxGeometry x="60" y="280" width="130" height="20" as="geometry" /></mxCell>
+    <mxCell id="P_MR" value="MR = 3.3V" style="text;fontSize=11;align=right;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="60" y="305" width="130" height="20" as="geometry" /></mxCell>
+
+    <!-- Pin dots -->
+    <mxCell id="D_DS" value="" style="ellipse;fillColor=#333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="196" y="180" width="8" height="8" as="geometry" /></mxCell>
+    <mxCell id="D_SHCP" value="" style="ellipse;fillColor=#333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="196" y="215" width="8" height="8" as="geometry" /></mxCell>
+    <mxCell id="D_STCP" value="" style="ellipse;fillColor=#333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="196" y="250" width="8" height="8" as="geometry" /></mxCell>
+
+    <!-- 74HC595 #1 -->
+    <mxCell id="SR1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=0;" vertex="1" parent="1"><mxGeometry x="370" y="100" width="180" height="240" as="geometry" /></mxCell>
+    <mxCell id="SR1_T" value="74HC595 #1" style="text;fontSize=13;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="395" y="105" width="130" height="22" as="geometry" /></mxCell>
+    <!-- SR1 Pins left -->
+    <mxCell id="SR1_DS" value="DS (14)" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="380" y="140" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_SHCP" value="SHCP (11)" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="380" y="165" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_STCP" value="STCP (12)" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="380" y="190" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_OE" value="OE (13)" style="text;fontSize=10;align=left;fontColor=#0066CC;" vertex="1" parent="1"><mxGeometry x="380" y="215" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_MR" value="MR (10)" style="text;fontSize=10;align=left;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="380" y="240" width="70" height="16" as="geometry" /></mxCell>
+    <!-- SR1 Pins right -->
+    <mxCell id="SR1_QH" value="QH' (9)" style="text;fontSize=10;align=right;fontColor=#9673a6;" vertex="1" parent="1"><mxGeometry x="470" y="140" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_QA" value="QA (15)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="470" y="170" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_QB" value="QB (1)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="470" y="190" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_QC" value="QC (2)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="470" y="210" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_QD" value="QD (3)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="470" y="230" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_QE" value="QE (4)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="470" y="250" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_QF" value="QF (5)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="470" y="270" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_QG" value="QG (6)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="470" y="290" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR1_QH_OUT" value="QH (7)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="470" y="310" width="70" height="16" as="geometry" /></mxCell>
+    <!-- SR1 pin dots -->
+    <mxCell id="SR1D_DS" value="" style="ellipse;fillColor=#333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="364" y="145" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="SR1D_SHCP" value="" style="ellipse;fillColor=#333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="364" y="170" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="SR1D_STCP" value="" style="ellipse;fillColor=#333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="364" y="195" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="SR1D_QH" value="" style="ellipse;fillColor=#9673a6;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="546" y="145" width="6" height="6" as="geometry" /></mxCell>
+
+    <!-- 74HC595 #2 -->
+    <mxCell id="SR2" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="620" y="100" width="180" height="240" as="geometry" /></mxCell>
+    <mxCell id="SR2_T" value="74HC595 #2" style="text;fontSize=13;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="645" y="105" width="130" height="22" as="geometry" /></mxCell>
+    <mxCell id="SR2_DS" value="DS (14)" style="text;fontSize=10;align=left;fontColor=#9673a6;" vertex="1" parent="1"><mxGeometry x="630" y="140" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR2_SHCP" value="SHCP (11)" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="630" y="165" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR2_STCP" value="STCP (12)" style="text;fontSize=10;align=left;" vertex="1" parent="1"><mxGeometry x="630" y="190" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR2_OE" value="OE (13)" style="text;fontSize=10;align=left;fontColor=#0066CC;" vertex="1" parent="1"><mxGeometry x="630" y="215" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR2_MR" value="MR (10)" style="text;fontSize=10;align=left;fontColor=#CC0000;" vertex="1" parent="1"><mxGeometry x="630" y="240" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR2_QA" value="QA (15)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="720" y="170" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR2_QB" value="QB (1)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="720" y="190" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR2_QC" value="QC (2)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="720" y="210" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR2_QD" value="QD (3)" style="text;fontSize=10;align=right;" vertex="1" parent="1"><mxGeometry x="720" y="230" width="70" height="16" as="geometry" /></mxCell>
+    <mxCell id="SR2D_DS" value="" style="ellipse;fillColor=#9673a6;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="614" y="145" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="SR2D_SHCP" value="" style="ellipse;fillColor=#333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="614" y="170" width="6" height="6" as="geometry" /></mxCell>
+    <mxCell id="SR2D_STCP" value="" style="ellipse;fillColor=#333;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="614" y="195" width="6" height="6" as="geometry" /></mxCell>
+
+    <!-- SR1 -> SR2 cascade connection (QH' -> DS) -->
+    <mxCell id="CASCADE" value="QH' -> DS" style="strokeWidth=2;strokeColor=#9673a6;rounded=1;fontSize=9;fontStyle=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry">
+      <mxPoint x="552" y="148" as="sourcePoint" />
+      <mxPoint x="614" y="148" as="targetPoint" />
+    </mxGeometry></mxCell>
+
+    <!-- ESP32 -> SR1 connections -->
+    <mxCell id="E_DS" value="DS" style="strokeWidth=1.5;strokeColor=#333;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="204" y="184" as="sourcePoint" /><mxPoint x="364" y="148" as="targetPoint" /><Array as="points"><mxPoint x="300" y="184" /></Array></mxGeometry></mxCell>
+    <mxCell id="E_SHCP" value="SHCP" style="strokeWidth=1.5;strokeColor=#333;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="204" y="219" as="sourcePoint" /><mxPoint x="614" y="173" as="targetPoint" /><Array as="points"><mxPoint x="310" y="219" /><mxPoint x="310" y="90" /><mxPoint x="590" y="90" /><mxPoint x="590" y="173" /></Array></mxGeometry></mxCell>
+    <mxCell id="E_STCP" value="STCP" style="strokeWidth=1.5;strokeColor=#333;rounded=1;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="204" y="254" as="sourcePoint" /><mxPoint x="614" y="198" as="targetPoint" /><Array as="points"><mxPoint x="330" y="254" /><mxPoint x="330" y="80" /><mxPoint x="580" y="80" /><mxPoint x="580" y="198" /></Array></mxGeometry></mxCell>
+
+    <!-- LED Groups - Channel 1 -->
+    <mxCell id="G1" value="Канал 1" style="text;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="870" y="95" width="100" height="18" as="geometry" /></mxCell>
+    <mxCell id="LED1Y" value="LED&lt;br&gt;Жёлтый&lt;br&gt;(Нагрев)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFF00;strokeColor=#CCCC00;fontSize=9;" vertex="1" parent="1"><mxGeometry x="870" y="120" width="60" height="45" as="geometry" /></mxCell>
+    <mxCell id="LED1G" value="LED&lt;br&gt;Зелёный&lt;br&gt;(Норма)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#00FF00;strokeColor=#00CC00;fontSize=9;" vertex="1" parent="1"><mxGeometry x="870" y="175" width="60" height="45" as="geometry" /></mxCell>
+    <mxCell id="LED1R" value="LED&lt;br&gt;Красный&lt;br&gt;(Авария)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FF0000;strokeColor=#CC0000;fontSize=9;fontColor=#FFFFFF;" vertex="1" parent="1"><mxGeometry x="870" y="230" width="60" height="45" as="geometry" /></mxCell>
+
+    <!-- LED Groups - Channel 2 -->
+    <mxCell id="G2" value="Канал 2" style="text;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="960" y="95" width="100" height="18" as="geometry" /></mxCell>
+    <mxCell id="LED2Y" value="LED&lt;br&gt;Жёлтый" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFF00;strokeColor=#CCCC00;fontSize=9;" vertex="1" parent="1"><mxGeometry x="960" y="120" width="60" height="45" as="geometry" /></mxCell>
+    <mxCell id="LED2G" value="LED&lt;br&gt;Зелёный" style="ellipse;whiteSpace=wrap;html=1;fillColor=#00FF00;strokeColor=#00CC00;fontSize=9;" vertex="1" parent="1"><mxGeometry x="960" y="175" width="60" height="45" as="geometry" /></mxCell>
+    <mxCell id="LED2R" value="LED&lt;br&gt;Красный" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FF0000;strokeColor=#CC0000;fontSize=9;fontColor=#FFFFFF;" vertex="1" parent="1"><mxGeometry x="960" y="230" width="60" height="45" as="geometry" /></mxCell>
+
+    <!-- LED Groups - Channel 3 -->
+    <mxCell id="G3" value="Канал 3" style="text;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="870" y="310" width="100" height="18" as="geometry" /></mxCell>
+    <mxCell id="LED3Y" value="LED&lt;br&gt;Жёлтый" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFF00;strokeColor=#CCCC00;fontSize=9;" vertex="1" parent="1"><mxGeometry x="870" y="335" width="60" height="45" as="geometry" /></mxCell>
+    <mxCell id="LED3G" value="LED&lt;br&gt;Зелёный" style="ellipse;whiteSpace=wrap;html=1;fillColor=#00FF00;strokeColor=#00CC00;fontSize=9;" vertex="1" parent="1"><mxGeometry x="870" y="390" width="60" height="45" as="geometry" /></mxCell>
+    <mxCell id="LED3R" value="LED&lt;br&gt;Красный" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FF0000;strokeColor=#CC0000;fontSize=9;fontColor=#FFFFFF;" vertex="1" parent="1"><mxGeometry x="870" y="445" width="60" height="45" as="geometry" /></mxCell>
+
+    <!-- LED Groups - Channel 4 -->
+    <mxCell id="G4" value="Канал 4" style="text;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="1"><mxGeometry x="960" y="310" width="100" height="18" as="geometry" /></mxCell>
+    <mxCell id="LED4Y" value="LED&lt;br&gt;Жёлтый" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFF00;strokeColor=#CCCC00;fontSize=9;" vertex="1" parent="1"><mxGeometry x="960" y="335" width="60" height="45" as="geometry" /></mxCell>
+    <mxCell id="LED4G" value="LED&lt;br&gt;Зелёный" style="ellipse;whiteSpace=wrap;html=1;fillColor=#00FF00;strokeColor=#00CC00;fontSize=9;" vertex="1" parent="1"><mxGeometry x="960" y="390" width="60" height="45" as="geometry" /></mxCell>
+    <mxCell id="LED4R" value="LED&lt;br&gt;Красный" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FF0000;strokeColor=#CC0000;fontSize=9;fontColor=#FFFFFF;" vertex="1" parent="1"><mxGeometry x="960" y="445" width="60" height="45" as="geometry" /></mxCell>
+
+    <!-- Resistor labels for LEDs -->
+    <mxCell id="R_NOTE" value="Каждый LED через резистор 220 Ом к GND" style="text;fontSize=10;fontStyle=2;fontColor=#666666;align=center;" vertex="1" parent="1"><mxGeometry x="830" y="500" width="230" height="20" as="geometry" /></mxCell>
+
+    <!-- Output mapping note -->
+    <mxCell id="MAP" value="SR#1: QA-QH = LED1Y, LED1G, LED1R, LED2Y, LED2G, LED2R, LED3Y, LED3G&lt;br&gt;SR#2: QA-QD = LED3R, LED4Y, LED4G, LED4R  (QC,QD не используются)" style="text;fontSize=10;fontStyle=2;fontColor=#666666;align=left;" vertex="1" parent="1"><mxGeometry x="30" y="380" width="520" height="40" as="geometry" /></mxCell>
+
+    <!-- OE and MR connections -->
+    <mxCell id="OE_N" value="OE = GND (всегда включены)" style="text;fontSize=10;fontColor=#0066CC;fontStyle=2;" vertex="1" parent="1"><mxGeometry x="370" y="360" width="200" height="18" as="geometry" /></mxCell>
+    <mxCell id="MR_N" value="MR = VCC (без сброса)" style="text;fontSize=10;fontColor=#CC0000;fontStyle=2;" vertex="1" parent="1"><mxGeometry x="370" y="385" width="200" height="18" as="geometry" /></mxCell>
+  </root>
+</mxGraphModel>
